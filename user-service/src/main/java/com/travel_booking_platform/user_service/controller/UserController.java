@@ -6,6 +6,7 @@ import com.travel_booking_platform.user_service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +16,8 @@ public class UserController {
 
     @Autowired
     UserService userService;
-    @PostMapping("/auth/create")
-    public ResponseEntity<UserResponseDTO> createNewUser(UserRequestDTO user){
+    @PostMapping("/create")
+    public ResponseEntity<UserResponseDTO> createNewUser(@RequestBody UserRequestDTO user){
         UserResponseDTO response = userService.createUser(user);
         return ResponseEntity.ok(response);
     }

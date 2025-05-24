@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO findByUserName(String username) {
-        Optional<UserEntity> user = repository.findByUserName(username);
+        Optional<UserEntity> user = repository.findByUsername(username);
         if (user.isPresent())
             return mapper.toDto(user.get());
         else
