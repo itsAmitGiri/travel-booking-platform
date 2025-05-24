@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface UserService {
     UserResponseDTO createUser(UserRequestDTO user);
-    UserResponseDTO getUserById(int id);
-    Optional<UserEntity> findByUserName(String username);
+    UserResponseDTO getUserById(Long id);
+    UserResponseDTO findByUserName(String username);
 }
